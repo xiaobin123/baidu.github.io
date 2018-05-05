@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tasdasditle</title>
+    <title>day1</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        p {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        #line {
+            height: 5px;
+            width: 0;
+            background: red;
+            margin: 20px auto;
+            transition: all 1s ease-in-out;
+        }
+
+        #line.active {
+            width: 200px;
+        }
+
+        #button {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 1px solid red;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
+<div class="box">
+    <p>前端学院</p>
+    <div id="line"></div>
+    <div id="button">点击切换</div>
+</div>
 </body>
+<script>
+    var btn = document.getElementById("button");
+    var liner = document.getElementById("line");
+    btn.onclick = function () {
+        if (liner.classList.contains("active") === false) {
+            liner.classList.add("active")
+        } else {
+            liner.classList.remove("active")
+        }
+    }
+</script>
 </html>
